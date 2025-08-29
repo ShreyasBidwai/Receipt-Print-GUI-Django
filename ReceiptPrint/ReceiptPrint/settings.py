@@ -25,6 +25,12 @@ SECRET_KEY = 'django-insecure-5!69351$(9y-#c87h@_a^&gx&v@i*pgn-q$w8-f4i6n!(^px7@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+STATIC_URL = '/static/'
+
+# Add this to help Django find static files in the app's static directory
+import os
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'receipt/static')]
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'receipt'
 ]
 
 MIDDLEWARE = [
